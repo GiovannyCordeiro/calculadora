@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="style.css" rel="stylesheet"/>
+  <title>Frontend Mentor | Calculator app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+  <script src="script.js" defer></script>
+  
+</head>
+<body>
+  <section class="calculator">
+    <div class="container">
+      <header>
+        <h2>calc</h2>
+        <div class="thema">
+          <div class="spans">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+          </div>
+
+          <div class="inputs">
+            <div class="span-input w50">
+              <span>Theme</span>
+            </div>
+
+            <div class="real-input w50">
+              <input type="radio" checked/>
+              <input type="radio"/>
+              <input type="radio"/>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="output">
+          <div data-previous-operand class="previous-operand"></div>
+          <div data-current-operand class="current-operator"></div>
+        </div>
+      </main>
+      
+      <section class="buttons">
+        <button data-numbers>7</button>
+        <button data-numbers>8</button>
+        <button data-numbers>9</button>
+        <button data-delete id="del" class="dell-reset">DEL</button>
+        <button data-numbers>4</button>
+        <button data-numbers>5</button>
+        <button data-numbers>6</button>
+        <button data-operator id="plus">+</button>
+        <button data-numbers>1</button>
+        <button data-numbers>2</button>
+        <button data-numbers>3</button>
+        <button data-operator id="minus">-</button>
+        <button data-numbers id="dot">.</button>
+        <button data-numbers>0</button>
+        <button data-operator id="share">/</button>
+        <button data-operator id="multiply">*</button>
+        <button data-reset id="reset" class="dell-reset reset">RESET</button>
+        <button data-equals id="equal" class="equal">=</button>
+      </section>
+    </div>
+  </section>
+</body>
+</html>
