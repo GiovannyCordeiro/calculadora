@@ -1,8 +1,8 @@
 const numberButtons = document.querySelectorAll("[data-numbers]");
-const operationButtons = document.querySelectorAll("[data-operator]");
 const equalsButton = document.querySelector('[data-equals]');
 const deleteButton = document.querySelector('[data-delete]');
 const allClearButton = document.querySelector('[data-reset]');
+const operationButtons = document.querySelectorAll("[data-operator]");
 const previosOperandTextElement = document.querySelector("[data-previous-operand]");
 const currentOperandTextElement = document.querySelector("[data-current-operand]");
 
@@ -11,6 +11,8 @@ class Calculator{
         this.previosOperandTextElement = previosOperandTextElement;
         this.currentOperandTextElement = currentOperandTextElement;
         this.clear();
+        // pq esse this existe? pelo simples fato de nao bugar o codigo na hora que eu clicar no botao, caso nao
+        // limpar antes, entao vai sempre da undefined 
     };
 
     clear(){
@@ -64,6 +66,7 @@ class Calculator{
         if(this.currentOperand === '') return;
         // verificacao para que nao consiga colocar operador sem ter um numero especifico 
         if(this.previusOperand !== ''){
+            // caso o previus operand NAO seja nada (string vazia) CALCULE, caso seja, retorne 
             this.calculate();
         }
         /*o que esse if checa, caso tenha algum numero ja colocado no previusOperand, calcule com
@@ -79,11 +82,11 @@ class Calculator{
         this.currentOperand = this.currentOperand.toString().slice(0, -1);
     }
 
-    // essa funcao de formatar o numero para colocar uma virgula depois que passa de tantos caracteres
-    //  disse o cara que é confusa mesmo, entao nao se faz necessario eu aprende-la totalmente
-    formatDisplayNumber(number){
+     /* essa funcao de formatar o numero para colocar uma virgula depois que passa de tantos caracteres
+      disse o cara que é confusa mesmo, entao nao se faz necessario eu aprende-la totalmente */
+    // formatDisplayNumber(number){
 
-    }
+    // }
 
 }
 
