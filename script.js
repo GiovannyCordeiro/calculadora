@@ -11,8 +11,6 @@ class Calculator{
         this.previosOperandTextElement = previosOperandTextElement;
         this.currentOperandTextElement = currentOperandTextElement;
         this.clear();
-        // pq esse this existe? pelo simples fato de nao bugar o codigo na hora que eu clicar no botao, caso nao
-        // limpar antes, entao vai sempre da undefined 
     };
 
     clear(){
@@ -28,7 +26,6 @@ class Calculator{
 
     appendNumber(number){
         if(this.currentOperand.includes('.') && number === '.') return;
-        //linha responsavel por n poder colocar mais de um ponto
         this.currentOperand = `${this.currentOperand}${number.toString()}`;
     }
 
@@ -64,29 +61,20 @@ class Calculator{
 
     chooseOperation(operation){
         if(this.currentOperand === '') return;
-        // verificacao para que nao consiga colocar operador sem ter um numero especifico 
         if(this.previusOperand !== ''){
-            // caso o previus operand NAO seja nada (string vazia) CALCULE, caso seja, retorne 
             this.calculate();
         }
-        /*o que esse if checa, caso tenha algum numero ja colocado no previusOperand, calcule com
-         o novo.*/
+
         this.operation = operation;
 
         this.previousOperand = this.currentOperand;
         this.currentOperand = '';
     }
-    //metodo responsavel por colocar o numero em cima
 
     delete(){
         this.currentOperand = this.currentOperand.toString().slice(0, -1);
     }
-
-     /* essa funcao de formatar o numero para colocar uma virgula depois que passa de tantos caracteres
-      disse o cara que é confusa mesmo, entao nao se faz necessario eu aprende-la totalmente */
-    // formatDisplayNumber(number){
-
-    // }
+}
 
 }
 
@@ -97,7 +85,6 @@ for(const numberButton of numberButtons){
         calculator.appendNumber(numberButton.innerText);
         calculator.updateDisplay();
     }); 
-    // funcao responsavel por colocar os numeros na tela apos o click
 }
 
 for (const operationButton of operationButtons){
@@ -105,8 +92,6 @@ for (const operationButton of operationButtons){
         calculator.chooseOperation(operationButton.innerText);
         calculator.updateDisplay();
     })
-    // loop resonsavel para que atualize os dados do metodo toda vez que acontecer o click nos 
-    // operadores
 }
 
 allClearButton.addEventListener('click', () => {
