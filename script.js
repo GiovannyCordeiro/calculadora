@@ -76,8 +76,6 @@ class Calculator{
     }
 }
 
-}
-
 const calculator = new Calculator(previosOperandTextElement, currentOperandTextElement);
 
 for(const numberButton of numberButtons){
